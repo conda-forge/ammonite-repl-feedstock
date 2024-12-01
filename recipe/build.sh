@@ -15,6 +15,7 @@ tee ${PREFIX}/bin/amm << EOF
 #!/bin/sh
 exec \${JAVA_HOME}/bin/java -jar \${CONDA_PREFIX}/libexec/ammonite-repl/ammonite-repl.jar "\$@"
 EOF
+chmod +x ${PREFIX}/bin/amm
 
 tee ${PREFIX}/bin/amm.cmd << EOF
 exec %JAVA_HOME%\bin\java -jar %CONDA_PREFIX%\libexec\ammonite-repl\ammonite-repl.jar %*
