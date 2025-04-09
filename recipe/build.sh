@@ -18,11 +18,11 @@ EOF
 chmod +x ${PREFIX}/bin/amm
 
 tee ${PREFIX}/bin/amm.cmd << EOF
-exec %JAVA_HOME%\bin\java -jar %CONDA_PREFIX%\libexec\ammonite-repl\ammonite-repl.jar %*
+call %JAVA_HOME%\bin\java -jar %CONDA_PREFIX%\libexec\ammonite-repl\ammonite-repl.jar %*
 EOF
 
 # Create pom.xml files so maven can be used to download licenses
-./mill -i amm[${latest_version}].publishM2Local ${SRC_DIR}/m2
+./mill -i amm[${latest_version}].publishM2Local --m2RepoPath ${SRC_DIR}/m2
 pom_file=$(find ${SRC_DIR}/m2 -name "*.pom")
 mv ${pom_file} $(dirname ${pom_file})/pom.xml
 
