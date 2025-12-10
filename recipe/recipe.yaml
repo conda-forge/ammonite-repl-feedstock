@@ -6,8 +6,11 @@ package:
   version: ${{ version }}
 
 source:
-  git: https://github.com/com-lihaoyi/Ammonite
-  tag: ${{ version }}
+  - git: https://github.com/com-lihaoyi/Ammonite
+    tag: ${{ version }}
+  - url: https://github.com/com-lihaoyi/Ammonite/archive/refs/tags/${{ version }}.tar.gz
+    sha256: 60399a2abb41cdcf7dbc10479daebf2df65bbc9e7947883f7071901e676a1eda
+    target_directory: archive
 
 build:
   number: 0
