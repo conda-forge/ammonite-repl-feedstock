@@ -1,5 +1,5 @@
 context:
-  version: 3.0.2
+  version: "3.0.9"
 
 package:
   name: ammonite-repl
@@ -9,7 +9,7 @@ source:
   - git: https://github.com/com-lihaoyi/Ammonite
     tag: ${{ version }}
   - url: https://github.com/com-lihaoyi/Ammonite/archive/refs/tags/${{ version }}.tar.gz
-    sha256: 60399a2abb41cdcf7dbc10479daebf2df65bbc9e7947883f7071901e676a1eda
+    sha256: fea5ff63bee2baa0cd3badb7fbb5ab0c4275f43e88ac9250e99f92e27f654a5f
     target_directory: archive
 
 build:
